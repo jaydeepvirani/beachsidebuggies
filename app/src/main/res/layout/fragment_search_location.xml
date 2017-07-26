@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/place_fragment"
+            android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@+id/place_fragment"
+            android:background="@color/black_overlay" />
+
+        <TextView
+            android:id="@+id/tvHomeAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#949090"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="Home Address"
+            android:textColor="@color/colorWhite" />
+
+        <include layout="@layout/cards_popularlocation" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/black_overlay" />
+
+        <TextView
+            android:id="@+id/tvPopolar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#949090"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="Business Sponsor STOP's"
+            android:textColor="@color/colorWhite" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frame_search_location"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>

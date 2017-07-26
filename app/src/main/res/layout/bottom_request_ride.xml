@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llBottomReqride"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|bottom"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgMyLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/_3sdp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_mylocation" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="I'm at : "
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/roundborder_bg"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Pickup location"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="I'm going to : "
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDropOff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/roundborder_bg"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Pick a Destination"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/tvRequestRide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/round_corner_bg_green"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="Request A Ride"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+</LinearLayout>

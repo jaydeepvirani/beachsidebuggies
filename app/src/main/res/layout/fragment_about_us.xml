@@ -1,0 +1,82 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eryushion.beachsidebuggies.fragment.AboutUsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9CDFE6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.02"
+                android:background="#9CDFE6"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="117dp"
+                android:background="#9CDFE6"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/hours_of_operation"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="@string/hours_of_operation" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.02"
+                android:background="#9CDFE6"
+                android:editable="false"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:scrollHorizontally="false"
+                android:scrollbars="none"
+                android:text="@string/about_us_text"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.02"
+                android:background="#9CDFE6"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Service Area:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Service Area:" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="434dp"
+                app:srcCompat="@drawable/coveragearea" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="533dp"
+                app:srcCompat="@drawable/flyer_orig" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
