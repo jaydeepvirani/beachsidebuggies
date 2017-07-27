@@ -210,9 +210,10 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
             }
         }
 
-
-        user = mfirebaseAuth.getCurrentUser();
-        System.out.println("USERRRR" + user.toString());
+        if (mfirebaseAuth.getCurrentUser() != null) {
+            user = mfirebaseAuth.getCurrentUser();
+            System.out.println("USERRRR" + user.toString());
+        }
 
         if (user != null) {
             firebaseUserId = user.getUid();
@@ -330,6 +331,8 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
             });
 
 
+        } else {
+            alertDialog("Oops!","There was an error on our side. Please try logging out and logging back in");
         }
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -1496,7 +1499,7 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (ActivityCompat.checkSelfPermission(MapsActivitys.this, permissions[0]) == PackageManager.PERMISSION_GRANTED) {
+        if (permissions.length > 0 && ActivityCompat.checkSelfPermission(MapsActivitys.this, permissions[0]) == PackageManager.PERMISSION_GRANTED) {
             switch (requestCode) {
                 case Constans.PERMISSION_LOCATION:
 
