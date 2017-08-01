@@ -413,7 +413,7 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
                             cancelled();
                         }
                     });
-        } else if (status == 1) {
+        } else if (status == 1 || status == 3) {
             mDatabase.child("loggedInDrivers")
                     .child(driverName)
                     .child("acceptedRides")
