@@ -431,6 +431,7 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
 
                                             if (!driverFcmToken.equals("") && driverFcmToken != null) {
                                                 SendNotification.sendNotification(driverFcmToken, "Rides Info", "Ride cancel by Customer");
+                                                Log.d("DriverToken", driverFcmToken);
                                             }
                                             cancelled();
                                         }
@@ -583,7 +584,7 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
                 }
                 break;
             case R.id.tvPlus:
-                if (numberOfRiders != 11) {
+                if (numberOfRiders != 14) {
                     numberOfRiders = numberOfRiders + 1;
                     tvNumOfPassenger.setText(String.valueOf(numberOfRiders));
                 }
@@ -1044,46 +1045,47 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        markerOptPickup = new MarkerOptions();
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        if (mMap != null) {
+            markerOptPickup = new MarkerOptions();
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
 
-        poly = new ArrayList<>();
-        poly.add(new LatLng(30.3327, -81.4112));
-        poly.add(new LatLng(30.3234, -81.4131));
-        poly.add(new LatLng(30.3074, -81.4198));
-        poly.add(new LatLng(30.2893, -81.4205));
-        poly.add(new LatLng(30.2680, -81.4182));
-        poly.add(new LatLng(30.2676, -81.3836));
-        poly.add(new LatLng(30.3410, -81.3953));
-        poly.add(new LatLng(30.3402, -81.4037));
-        poly.add(new LatLng(30.3329, -81.4020));
-        poly.add(new LatLng(30.3327, -81.4112));
+            poly = new ArrayList<>();
+            poly.add(new LatLng(30.3327, -81.4112));
+            poly.add(new LatLng(30.3234, -81.4131));
+            poly.add(new LatLng(30.3074, -81.4198));
+            poly.add(new LatLng(30.2893, -81.4205));
+            poly.add(new LatLng(30.2680, -81.4182));
+            poly.add(new LatLng(30.2676, -81.3836));
+            poly.add(new LatLng(30.3410, -81.3953));
+            poly.add(new LatLng(30.3402, -81.4037));
+            poly.add(new LatLng(30.3329, -81.4020));
+            poly.add(new LatLng(30.3327, -81.4112));
 
-        if (mLastLocation != null) {
-            lastSavedLatLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-            Log.d("mLastLocation", String.valueOf(mLastLocation));
-            //startLocationUpdates();
-            changeMap(mLastLocation);
-            Polygon polygon = mMap.addPolygon(new PolygonOptions()
-                    .clickable(true)
-                    .addAll(poly));
+            if (mLastLocation != null) {
+                lastSavedLatLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+                Log.d("mLastLocation", String.valueOf(mLastLocation));
+                //startLocationUpdates();
+                changeMap(mLastLocation);
+                Polygon polygon = mMap.addPolygon(new PolygonOptions()
+                        .clickable(true)
+                        .addAll(poly));
 
-            polygon.setStrokeWidth(3.0f);
-            polygon.setStrokeColor(getResources().getColor(R.color.polygon_stroke_color));
-            polygon.setFillColor(getResources().getColor(R.color.polygon_fill_color));
+                polygon.setStrokeWidth(3.0f);
+                polygon.setStrokeColor(getResources().getColor(R.color.polygon_stroke_color));
+                polygon.setFillColor(getResources().getColor(R.color.polygon_fill_color));
 // Store a data object with the polygon, used here to indicate an arbitrary type.
 
 
-            // Position the map's camera near Alice Springs in the center of Australia,
-            // and set the zoom factor so most of Australia shows on the screen.
+                // Position the map's camera near Alice Springs in the center of Australia,
+                // and set the zoom factor so most of Australia shows on the screen.
 
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()), 14.0f));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude()), 14.0f));
 
-            // Set listeners for click events.
-            mMap.setOnPolygonClickListener(this);
+                // Set listeners for click events.
+                mMap.setOnPolygonClickListener(this);
 
          /*   double crtLat = mLastLocation.getLatitude();
             double crtLng = mLastLocation.getLongitude();
@@ -1114,8 +1116,9 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
 
                 }
             });*/
-            //geoCoder(crtLat, crtLng);
+                //geoCoder(crtLat, crtLng);
 
+            }
         }
     }
 
