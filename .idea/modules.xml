@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BeachSideBuggies-Android-master.iml" filepath="$PROJECT_DIR$/BeachSideBuggies-Android-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeachSideBuggies-Android-master-master.iml" filepath="$PROJECT_DIR$/BeachSideBuggies-Android-master-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeachSideBuggies-NewUI.iml" filepath="$PROJECT_DIR$/BeachSideBuggies-NewUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/beachsidebuggies-virani.iml" filepath="$PROJECT_DIR$/beachsidebuggies-virani.iml" />
     </modules>

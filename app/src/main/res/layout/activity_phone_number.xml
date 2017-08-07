@@ -19,6 +19,8 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"
             android:hint="Phone Number"
+            android:inputType="number"
+            android:maxLength="10"
             android:padding="@dimen/_12sdp"
             android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
