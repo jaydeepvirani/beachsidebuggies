@@ -18,6 +18,8 @@ import com.eryushion.beachsidebuggies.helper.Permission;
 import com.eryushion.beachsidebuggies.model.Constans;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         mFirebaseAuth = FirebaseAuth.getInstance();
-
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("System out", "Refreshed_token: " + refreshedToken);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("System out", "Refreshed_token: " + refreshedToken);
         //media_Controller = new MediaController(MainActivity.this);
         //String uriPath = "android.resource://" + getPackageName() + "/" + R.raw.launchvid;
         //Uri uri = Uri.parse(uriPath);
