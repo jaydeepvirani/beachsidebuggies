@@ -40,9 +40,9 @@ import com.google.firebase.iid.FirebaseInstanceId;
 public class SignUpActivity extends AppCompatActivity {
 
     String TAG = "SIGNUP";
-    private EditText edtFirstName, edtLastName, edtEmail, edtPhone, edtPassword, edtConfPassword;
-    private TextInputLayout inputFirstName, inputLastName, inputEmail, inputPhone, inputPassword, inputConfPassword;
-    private String strFirstName = "", strLastName = "", strEmail = "", strPhone = "", strPassword = "", strConfPassword = "";
+    private EditText edtFirstName, edtLastName, edtEmail, edtPassword, edtConfPassword;
+    private TextInputLayout inputFirstName, inputLastName, inputEmail, inputPassword, inputConfPassword;
+    private String strFirstName = "", strLastName = "", strEmail = "", strPassword = "", strConfPassword = "";
     private Button btnCreate;
 
     private FirebaseAuth firebaseAuth;
@@ -70,13 +70,11 @@ public class SignUpActivity extends AppCompatActivity {
         edtFirstName = (EditText) findViewById(R.id.edtFirstName);
         edtLastName = (EditText) findViewById(R.id.edtLastName);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
-        edtPhone = (EditText) findViewById(R.id.edtPhone);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtConfPassword = (EditText) findViewById(R.id.edtConfPassword);
 
         inputFirstName = (TextInputLayout) findViewById(R.id.inputFirstName);
         inputLastName = (TextInputLayout) findViewById(R.id.inputLastName);
-        inputPhone = (TextInputLayout) findViewById(R.id.inputPhone);
         inputEmail = (TextInputLayout) findViewById(R.id.inputEmail);
         inputPassword = (TextInputLayout) findViewById(R.id.inputPassword);
         inputConfPassword = (TextInputLayout) findViewById(R.id.inputConfPassword);
@@ -153,7 +151,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     progressDialog.dismiss();
                     Snackbar.make(scrollView, "Successfully registered", Snackbar.LENGTH_LONG).show();
-                    Intent intent = new Intent(SignUpActivity.this, MapsActivitys.class);
+                    Intent intent = new Intent(SignUpActivity.this, PhoneNumberActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
@@ -257,13 +255,13 @@ public class SignUpActivity extends AppCompatActivity {
                                 Log.d("DISPLAYNAME", user.getDisplayName());
 
                                 DatabaseReference reference = mDatabase.child("users").child(user.getUid());
-                                reference.child("phoneNumber").setValue(strPhone);
+
                                 if (!fcmToken.equals("")) {
                                     reference.child("fcmToken").setValue(fcmToken);
                                 }
                                 // mDatabase.child("users").child(user.getUid()).child("displayname").setValue(displayName);
                                 Snackbar.make(scrollView, "Successfully registered", Snackbar.LENGTH_LONG).show();
-                                Intent intent = new Intent(SignUpActivity.this, MapsActivitys.class);
+                                Intent intent = new Intent(SignUpActivity.this, PhoneNumberActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
@@ -286,7 +284,6 @@ public class SignUpActivity extends AppCompatActivity {
         strFirstName = edtFirstName.getText().toString();
         strLastName = edtLastName.getText().toString();
         strEmail = edtEmail.getText().toString();
-        strPhone = edtPhone.getText().toString();
         strPassword = edtPassword.getText().toString();
         strConfPassword = edtConfPassword.getText().toString();
 
@@ -295,9 +292,6 @@ public class SignUpActivity extends AppCompatActivity {
             valid = false;
         } else if (strEmail.equals("")) {
             inputEmail.setError("Please Enter Email");
-            valid = false;
-        } else if (strPhone.equals("") || strPhone.length() != 10) {
-            inputPhone.setError("Please Enter Valid Phone Number");
             valid = false;
         } else if (strPassword.equals("")) {
             inputPassword.setError("Please Enter Password");

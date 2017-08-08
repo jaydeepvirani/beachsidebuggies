@@ -408,7 +408,12 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
                         @Override
                         public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                             if (!driverFcmToken.equals("") && driverFcmToken != null) {
-                                SendNotification.sendNotification(driverFcmToken, "Rides Info", "Ride cancel by Customer");
+                                if (user.getDisplayName() != null) {
+                                    SendNotification.sendNotification(driverFcmToken, "Rides Info", String.format("%s has cancelled their ride", user.getDisplayName()));
+                                } else {
+                                    SendNotification.sendNotification(driverFcmToken, "Rides Info", "A Rider has cancelled their ride");
+                                }
+
                             }
                             cancelled();
                         }
@@ -430,8 +435,11 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
 
 
                                             if (!driverFcmToken.equals("") && driverFcmToken != null) {
-                                                SendNotification.sendNotification(driverFcmToken, "Rides Info", "Ride cancel by Customer");
-                                                Log.d("DriverToken", driverFcmToken);
+                                                if (user.getDisplayName() != null) {
+                                                    SendNotification.sendNotification(driverFcmToken, "Rides Info", String.format("%s has cancelled their ride", user.getDisplayName()));
+                                                } else {
+                                                    SendNotification.sendNotification(driverFcmToken, "Rides Info", "A Rider has cancelled their ride");
+                                                }
                                             }
                                             cancelled();
                                         }
@@ -1356,6 +1364,8 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
 
                     }
 
+                } else {
+                    alertDialog("Oops!","There was an error on our side. Please try logging out and logging back in");
                 }
             } catch (Exception ignored) {
 

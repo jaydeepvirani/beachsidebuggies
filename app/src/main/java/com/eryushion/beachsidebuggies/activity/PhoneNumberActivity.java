@@ -30,6 +30,7 @@ public class PhoneNumberActivity extends AppCompatActivity
         setContentView(R.layout.activity_phone_number);
         final EditText edtPhone = (EditText) findViewById(R.id.edtPhone);
         final TextInputLayout inputPhone = (TextInputLayout) findViewById(R.id.inputPhone);
+        Button cancelButton = (Button) findViewById(R.id.cancelButton);
         Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
         mfirebaseAuth = FirebaseAuth.getInstance();
@@ -61,6 +62,17 @@ public class PhoneNumberActivity extends AppCompatActivity
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mfirebaseAuth.signOut();
+                Intent intent = new Intent(PhoneNumberActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
     }
 
     public boolean validNumber(String sPhoneNumber)
