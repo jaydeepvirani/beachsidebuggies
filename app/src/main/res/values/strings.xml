@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BeachSideBuggies</string>
 
+    <string name="facebook_disclosure">Logging in with Facebook helps us improve accuracy and security. We promise to never post anything.</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

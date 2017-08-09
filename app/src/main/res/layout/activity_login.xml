@@ -4,7 +4,7 @@
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_bg_signup"
+    android:background="@color/colorPrimary"
     tools:context=".activity.SignUpActivity">
 
     <LinearLayout
@@ -24,10 +24,18 @@
             android:id="@+id/btnLoginFacebook"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/com_facebook_button_background_color"
             android:text="Login With Facebook"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/facebook_disclosure"
+            android:textColor="?android:attr/textColorSecondaryActivated" />
 
         <TextView
             android:layout_width="match_parent"
@@ -85,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_click"
                 android:text="Login"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
