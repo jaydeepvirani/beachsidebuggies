@@ -148,6 +148,8 @@ public class SearchLocationFragment extends Fragment {
         locationList.add(model);
         model = new LocationModel("Fairfield Inn & Suites Jacksonville Beach", "ChIJvZnF5hpJ5IgRSntgtqDsp1k");
         locationList.add(model);
+        model = new LocationModel("Surfwiches Steaks Hoagies & More", "ChIJ91f0snJJ5IgRqkLbejnFdTM");
+        locationList.add(model);
 
 
     }
