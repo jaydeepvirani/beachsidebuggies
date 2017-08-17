@@ -971,7 +971,7 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
     public void pickUpLocation(Place place) {
         if (isPointInPolygon(place.getLatLng(), poly))
         {
-            tvPickup.setText(place.getName().toString());
+            tvPickup.setText(place.getName());
 
             latlngPickup = place.getLatLng();
             place.getName();
@@ -1241,9 +1241,10 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
                     Address address = addresses.get(0);
                     // Log.d("placeName", address.getAddressLine(0));
                     placeName = String.valueOf(address.getAddressLine(0));
+                    String newName = placeName.substring(0,placeName.indexOf(","));
                     //   Log.d("placeName", placeName);
                     // markerOptPickup.title(placeName);
-                    tvPickup.setText(placeName);
+                    tvPickup.setText(newName);
                     StringBuilder sb = new StringBuilder();
                     for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
                         if (i != 1) {

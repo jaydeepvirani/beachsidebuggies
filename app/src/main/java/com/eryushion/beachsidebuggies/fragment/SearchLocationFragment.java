@@ -225,7 +225,7 @@ public class SearchLocationFragment extends Fragment {
                     //  pickupPlaceLatlng = place.getLatLng();
                     // activity().latlngPickup = pickupPlaceLatlng;
                     activity().pickUpLocation(place);
-                    activity().tvPickup.setText("Home Address");
+                    activity().tvPickup.setText(place.getName());
                     //activity().tvPickup.setText(place.getName());
                     activity().addresses.clear();
 
@@ -237,7 +237,7 @@ public class SearchLocationFragment extends Fragment {
         } else {
             //activity().dropOffPlace = place;
             activity().dropoffMarker(place);
-            activity().tvDropOff.setText("Home Address");
+            activity().tvDropOff.setText(place.getName());
             // activity().tvDropOff.setText(place.getName());
         }
         activity().fragmentClassItems = "";
