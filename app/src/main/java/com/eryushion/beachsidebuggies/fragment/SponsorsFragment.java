@@ -1,6 +1,7 @@
 package com.eryushion.beachsidebuggies.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,11 +9,17 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.text.method.ScrollingMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eryushion.beachsidebuggies.R;
 
@@ -89,8 +96,52 @@ public class SponsorsFragment extends Fragment {
 
         Resources res = getResources();
         String text = res.getString(R.string.sponsors_text);
-        CharSequence styledText = Html.fromHtml(text);
-        textView.setText(styledText);
+        SpannableString styled = new SpannableString(Html.fromHtml(text));
+
+
+        int i1 = styled.toString().indexOf("info");
+        int i2 = styled.toString().indexOf(".com");
+        int i3 = styled.toString().indexOf("Click");
+        int i4 = styled.toString().indexOf("Inquire!");
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        textView.setText(styled, TextView.BufferType.SPANNABLE);
+        Spannable mySpannable = (Spannable)textView.getText();
+        ClickableSpan myClickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"info@beachsidebuggies.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "Sponsorship inquiry");
+                i.putExtra(Intent.EXTRA_TEXT   , "");
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+
+                }
+
+            }
+        };
+        ClickableSpan myClickableSpan2 = new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"info@beachsidebuggies.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "Sponsorship inquiry");
+                i.putExtra(Intent.EXTRA_TEXT   , "");
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail..."));
+                } catch (android.content.ActivityNotFoundException ex) {
+
+                }
+
+            }
+        };
+        mySpannable.setSpan(myClickableSpan, i1, i2 + 3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        mySpannable.setSpan(myClickableSpan2, i3, i4 + 7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         //return inflater.inflate(R.layout.fragment_about_us, container, false);
         return view;

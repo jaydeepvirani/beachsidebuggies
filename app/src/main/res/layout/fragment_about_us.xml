@@ -7,6 +7,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <WebView
+        android:id="@+id/wV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

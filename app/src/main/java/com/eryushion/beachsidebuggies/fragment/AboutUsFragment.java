@@ -9,6 +9,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.eryushion.beachsidebuggies.R;
@@ -34,6 +35,7 @@ public class AboutUsFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     Toolbar toolbar;
     TextView textView;
+    WebView webView;
 
     public AboutUsFragment() {
         // Required empty public constructor
@@ -72,9 +74,11 @@ public class AboutUsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about_us, null);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar2);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        webView = (WebView) view.findViewById(R.id.wV);
+        webView.loadUrl("http://www.beachsidebuggies.com/about-us.html");
+        //((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        //((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

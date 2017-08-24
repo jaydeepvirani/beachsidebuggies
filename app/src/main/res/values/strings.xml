@@ -14,33 +14,33 @@
     <string name="pickup_alert_msg">Your pickup location must be in our service area!</string>
     <string name="request_limit_exceeded">Currently no driver is available, sorry for the inconvenience.</string>
     <string name="request_limit_title">Try Again</string>
-    <string name="sponsors_text">&lt;b>WANT TO BE AN OFFICIAL BEACHSIDE BUGGY STOP AND ADVERTISING SPONSOR??&lt;/b>&lt;br>&lt;br>
+    <string name="sponsors_text">&lt;b>WANT TO BE AN OFFICIAL BEACHSIDE BUGGY STOP AND ADVERTISING SPONSOR??&lt;br>&lt;u>Click Here To Inquire!&lt;/u>&lt;/b>&lt;br>&lt;br>
 
-         Secure a billboard spot on a Beachside Buggy
+         &lt;b>Secure a billboard spot on a Beachside Buggy&lt;/b>&lt;br>
 Beachside Buggy Golf Carts will prominently display your advertisement to customers all over the Jacksonville Beach, Neptune Beach and Atlantic Beach areas. Billboard advertisements will gain awareness to our sponsor’s businesses.
 Get creative! Sponsors will be able to choose the design of their advertisements and the location of which it is to be displayed on the cart (prices vary based on location of ad).
 
-        &lt;br>&lt;br> Hassle-free transportation for your customers to/from your business
+        &lt;br>&lt;br> &lt;b>Hassle-free transportation for your customers to/from your business&lt;/b>&lt;br>
 No parking available? No Problem! Offer your customers a FREE ride to your business to reduce the need for parking spaces.
 Eliminate serious drinking and driving risks by offering a FREE sober ride home to your customers. Order another round! Your customers don’t have to drive home!
 Large Beachside Buggy passenger vans can accommodate groups of people up to 15 people at one time. More spacious than any other local transportation option and less expensive than a limo service!
 
-&lt;br>&lt;br>Priority service for your customers and employees*
+&lt;br>&lt;br>&lt;b>Priority service for your customers and employees*&lt;/b>&lt;br>
 During peak hours of the day/night customers going to your business will receive the fastest pick up times. Talk about VIP service!
 *Shuttling employees to/from off-site parking is available upon request.
 
-&lt;br>&lt;br>Be listed as a "Suggested Destination" choice
+&lt;br>&lt;br>&lt;b>Be listed as a "Suggested Destination" choice&lt;/b>&lt;br>
 Don’t know where you want to go just yet? No Problem! Sponsors will be featured in a list of “suggested destinations” prior to customers typing in their destination on our app
 COMING SOON! With the help of our app developer we aim to create a backdoor-access for our sponsors to promote their own businesses within our app! This would allow you to post photos, drink/food specials, and upcoming events/entertainment, and more for your business on our app!
 
-&lt;br>&lt;br>Eco-friendly and fun!
+&lt;br>&lt;br>&lt;b>Eco-friendly and fun!&lt;/b>&lt;br>
 All of our carts run off electricity and produce zero-emissions. We aim to keep our carbon footprint low in our operations and electric carts do just that!
 The carts are fun to ride! They are quiet enough to have a conversation with the person next to you and offer a unique way to see the beaches with the wind blowing in your hair!
 
-        &lt;br>&lt;br>Featured on our postcard-sized map of the beaches with our sponsors highlighted
+        &lt;br>&lt;br>&lt;b>Featured on our postcard-sized map of the beaches with our sponsors highlighted&lt;/b>&lt;br>
 Maps will be placed in the carts, nearby hotels, visitor bureaus, local businesses and sponsor locations.
 
-&lt;br>&lt;br>Become a part of the family of businesses that we actively promote through our drivers, social media, and app
+&lt;br>&lt;br>&lt;b>Become a part of the family of businesses that we actively promote through our drivers, social media, and app&lt;/b>&lt;br>
 Unlike most contemporary ride sharing services, our drivers are all hand picked for the best possible service, customer satisfaction and local knowledge. 100% of our Facebook and Yelp reviews are 5-star!
 As part of our Beach Buggy community we will occasionally share your businesses social media posts on our own outlets to help build your following and exposure (events, drink specials, tonight’s entertainment, etc.) Sharing is caring!
 
@@ -50,4 +50,4 @@ As part of our Beach Buggy community we will occasionally share your businesses 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hours_of_operation">Hours Of Operation: \nMonday-Wednesday 3p.m.- Midnight\nThurs - Friday 3p.m. - 2a.m. \nSaturday 11a.m. - 2a.m. \n Sunday 11a.m. - Midnight</string>
     <string name="about_us_text">Beachside Buggies provides FREE rides and recommendations to the residents and visitors of the beaches community. We operate environmentally friendly, zero emission, long-range, 8-10 seater electric carts and 14 passenger vans.\n\n   We partner with local businesses sponsors for advertisement, who are listed as official Beachside Buggy stops and destination choices in our app, contributing to the operating costs and allowing the shuttles to be complimentary to all our passengers.\n\n   Riders are not charged any type of fee, but encouraged to tip drivers however they see fit. Riders can request on-demand rides between our sponsor network locations, businesses, hotels, and residential addresses via our mobile app.\n\n   Whether you are looking for a restaurant recommendation, the best live music, or just a safe ride back to your hotel or home, we\'re ready to pick you up! Our drivers are some of the most knowledgeable concierges in the area and will always have great recommendations!</string>
-    </resources>
+</resources>
