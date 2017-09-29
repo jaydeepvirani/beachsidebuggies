@@ -1251,9 +1251,9 @@ public class MapsActivitys extends AppCompatActivity implements OnMapReadyCallba
                             sb.append(address.getAddressLine(i)).append(",");
                         }
                     }
-                    sb.append(address.getCountryName());
+                    //sb.append(address.getCountryName());
                     pickupAddress = sb.toString();
-                    //   Log.d("pickupAddress", pickupAddress);
+                    Log.d("pickupAddress", pickupAddress);
                     checkMarker(placeName);
                 }
 
